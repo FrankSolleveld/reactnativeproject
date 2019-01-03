@@ -7,8 +7,9 @@ import {
 
 class EventForm extends Component {
     handleAddPress = () => {
-        // Nav logic
+        this.props.navigation.navigate('list')
     }
+
     render() {
         return (
             <View>

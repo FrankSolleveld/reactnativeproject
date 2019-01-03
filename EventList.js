@@ -1,8 +1,9 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { FlatList, Text, StyleSheet } from 'react-native'
 import EventCard from './EventCard'
+import ActionButton from 'react-native-action-button'
 
-const styles = StyleSheet.create ({
+const styles = StyleSheet.create({
     list: {
         flex: 1,
         paddingTop: 40,
@@ -35,16 +36,26 @@ class EventList extends Component {
         this.setState({ events })
     }
 
+    handleAddEvent = () => {
+        this.props.navigation.navigate('form')
+    }
+
     render() {
-        return (
-            <FlatList 
-            style={styles.list}
-            data={ this.state.events }
-            renderItem={({ item }) => <EventCard event={item} />}
-            // id is unique to the item
-            keyExtractor={ item => item.id }
+        return [
+            <FlatList
+                key="list"
+                style={styles.list}
+                data={this.state.events}
+                // id is unique to the item
+                renderItem={({ item, separators }) => <EventCard event={item} />}
+                keyExtractor={item => item.id}
+            />,
+            <ActionButton
+                key="button"
+                onPress={this.handleAddEvent}
+                buttonColor="rgba(231, 76, 60, 1)"
             />
-        )
+        ]
     }
 
 }
