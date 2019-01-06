@@ -1,6 +1,6 @@
-import uuid from 'uuid';
 import moment from 'moment';
-import Expo from "expo";
+import Expo from 'expo';
+import uuid from 'uuid'
 
 const { manifest } = Expo.Constants;
 const api = manifest.packagerOpts.dev
@@ -15,22 +15,21 @@ export function getEvents() {
   .then(events => events.map(e => ({ ...e, date: new Date(e.date) })))
 }
 
-export function saveEvent({ title, date }) {
+export function saveEvent({title, date}) {
   return fetch(url, {
     method: 'POST',
     body: JSON.stringify({
       title,
       date,
-      id: uuid(),
+      id: uuid()
     }),
     headers: new Headers({
       'Content-Type': 'application/json'
     })
   })
   .then(res => res.json())
-  .catch(error => console.error('Error:', error));
-}
-
+  .catch(err => console.log(err))
+} 
 
 export function formatDate(dateString) {
   const parsed = moment(new Date(dateString));

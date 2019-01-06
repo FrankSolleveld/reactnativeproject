@@ -1,24 +1,9 @@
 {
-    "events": [
-        {
-            "title":"Release RN course",
-            "date":"2019-06-15T00:00:00.000Z",
-            "id":"vbiuhviodwhilfhwoibhfjkw"
-        },
-        {
-            "title": "Demo a new app",
-            "date": "2021-03-29T13:45:18.000Z",
-            "id": "001c9b6d-00a9-465c-a2d3-afb7176a0a67"
-        },
-        {
-            "title": "Demo a new application",
-            "date": "2020-04-29T13:45:18.000Z",
-            "id": "001c9b6d-00a9-465c-a2d3-afb7176a0a57"
-        },
-        {
-            "title": "Demo a new film",
-            "date": "2020-05-29T13:45:18.000Z",
-            "id": "001c9b6d-00a9-465c-a2d3-afb7176a0a37"
-        }
-    ]
+  "events": [
+    {
+      "title": "Oplevering TLE1",
+      "date": "2019-01-15T08:30:05.000Z",
+      "id": "0bfc83f4-eef9-4fb9-9797-413d8a5a137b"
+    }
+  ]
 }
